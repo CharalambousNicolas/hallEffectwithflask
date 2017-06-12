@@ -1,0 +1,37 @@
+{% macro build_link(url,waarde) %}
+    <a href="{{ url_for(url) }}">{{ waarde }}</a>
+{% endmacro %}
+
+
+
+
+
+
+{% macro build_image(source,tooltip) %}
+    <img src="{{ url_for('static',filename='images/'+source|string) }}" title="{{ tooltip }}">
+{% endmacro %}
+
+
+
+{% macro build_figure(url,caption,tooltip) %}
+    <figure>
+    {{ build_image(url,tooltip) }}
+    <figcaption>{{ caption }}</figcaption>
+    </figure>
+{% endmacro %}
+
+
+
+
+
+
+
+{% macro input_element(type,name) %}
+    <input type="{{ type }}" required name="{{ name }}">
+{% endmacro %}
+{% macro send_button(value) %}
+    <input type="submit" value="{{ value }}">
+{% endmacro %}
+{% macro text_area(name,cols,rows) %}
+    <textarea name="{{ name }}" required cols="{{ cols }}" rows="{{ rows }}"></textarea>
+{% endmacro %}

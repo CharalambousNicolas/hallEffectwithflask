@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}
+Account
+{% endblock %}
+{% block account %}
+class="active"
+{% endblock %}
+{% block body %}
+
+<body style="background-color:lightgrey;">
+<p style="font-size:100px">Account</p>
+
+
+<div class="container">
+    <form>
+
+
+        <label><b>Username</b></label>
+        <input type="text" placeholder="Change Username" name="uname" required>
+
+        <label><b>Email</b></label>
+        <input type="text" placeholder="Change Email" name="email" required>
+
+        <label><b>Password</b></label>
+        <input type="password" placeholder="New Password" name="psw" required>
+
+
+    </form>
+
+    <!--<a href={{'login'}}>-->
+        <!--<button>Log out</button>-->
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}
+Log in
+{% endblock %}
+{% block login %}
+class="active"
+{% endblock %}
+{% block body %}
+
+<h1 id="login">Log in</h1>
+<body style="background-color:lightgrey;">
+<div class="container6">
+    <form action="" method="POST" id="loginForm">
+        <div class="imgcontainer">
+            <img src="/static/images/img_avatar2.png" alt="Avatar2" class="avatar2">
+
+        </div>
+
+
+        <label><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="username" required >
+        <label><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" required>
+
+    </form>
+
+        <input type="submit" value="Log in" form="loginForm" login>
+
+        <a href={{'createAccount'}}>
+            <button>Create Account</button>
+        </a>
+</div>
+
+
+{% endblock %}

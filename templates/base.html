@@ -1,0 +1,51 @@
+{% import 'macros/macro.html' as macros %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <title>
+        See me rolling - {% block title %}
+
+        {% endblock %}
+    </title>
+</head>
+<body>
+
+{% block navigation %}
+<ul>
+    <li><a {% block home %} {% endblock %} href="{{ url_for('homePage') }}">Home</a></li>
+    <li><a {% block testimonials %} {% endblock %}href="{{ url_for('testimonials') }}">Testimonials</a></li>
+    <li><a {% block contact %} {% endblock %}href="{{ url_for('contact') }}">Contact</a></li>
+
+{%if loggedin==1%}
+    <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">History</a>
+        <div class="dropdown-content">
+            <a {% block totaldistance %} {% endblock %}href="{{ url_for('totaldistance') }}">Total distance</a>
+            <a {% block lastRun %} {% endblock %}href="{{ url_for('lastRun') }}">Last Run</a>
+            <a {% block today %} {% endblock %}href="{{ url_for('today') }}">Today</a>
+            <a {% block daybyday %} {% endblock %}href="{{ url_for('daybyday') }}">Day by day</a>
+        </div>
+
+    </li>
+     {%endif%}
+    <h1 id="title">See me rolling</h1>
+    {%if loggedin==0%}
+    <li style="float:right"><a {% block login %} {% endblock %} href="{{ url_for('login') }}">Log in</a></li>
+    {%else%}
+
+    <li style="float:right"><a {% block account %} {% endblock %} href="{{ url_for('account') }}">Account</a></li>
+    {%endif%}
+</ul>
+
+
+
+{% endblock %}
+
+
+{% block body %}
+
+{% endblock %}
+
+</body>
+</html>
