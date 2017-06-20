@@ -10,91 +10,126 @@
     <schema id="4" parent="1" name="mysql"/>
     <schema id="5" parent="1" name="performance_schema"/>
     <schema id="6" parent="1" name="testdb"/>
-    <table id="7" parent="2" name="data"/>
-    <table id="8" parent="2" name="review"/>
-    <table id="9" parent="2" name="users"/>
-    <column id="10" parent="7" name="ID">
+    <table id="7" parent="2" name="contact"/>
+    <table id="8" parent="2" name="data"/>
+    <table id="9" parent="2" name="review"/>
+    <table id="10" parent="2" name="users"/>
+    <column id="11" parent="7" name="contactID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="11" parent="7" name="distance">
+    <column id="12" parent="7" name="userID">
       <Position>2</Position>
-      <DataType>int(20)|0</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+      <DataType>int(11)|0</DataType>
     </column>
-    <column id="12" parent="7" name="dateday">
+    <column id="13" parent="7" name="subject">
       <Position>3</Position>
-      <DataType>datetime|0</DataType>
-      <NotNull>1</NotNull>
+      <DataType>varchar(50)|0</DataType>
     </column>
-    <column id="13" parent="7" name="speed">
+    <column id="14" parent="7" name="message">
       <Position>4</Position>
-      <DataType>float(5,2)|0</DataType>
-      <DefaultExpression>&apos;0.00&apos;</DefaultExpression>
+      <DataType>varchar(255)|0</DataType>
     </column>
-    <key id="14" parent="7" name="PRIMARY">
+    <index id="15" parent="7" name="contact_users_ID_fk">
+      <ColNames>userID</ColNames>
+    </index>
+    <index id="16" parent="7" name="contact_contactID_uindex">
+      <ColNames>contactID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="17" parent="7" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>ID</ColNames>
+      <ColNames>contactID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="15" parent="7" name="iduser">
-      <ColNames>ID</ColNames>
+    <key id="18" parent="7" name="contact_contactID_uindex">
+      <ColNames>contactID</ColNames>
+      <UnderlyingIndexName>contact_contactID_uindex</UnderlyingIndexName>
+    </key>
+    <foreign-key id="19" parent="7" name="contact_users_ID_fk">
+      <ColNames>userID</ColNames>
       <RefSchemaName>dbproject</RefSchemaName>
       <RefTableName>users</RefTableName>
       <RefColNames>ID</RefColNames>
     </foreign-key>
-    <column id="16" parent="8" name="ID">
+    <column id="20" parent="8" name="ID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="17" parent="8" name="review">
+    <column id="21" parent="8" name="distance">
       <Position>2</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>double|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
-    <column id="18" parent="8" name="iduser">
+    <column id="22" parent="8" name="dateday">
       <Position>3</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
     </column>
-    <key id="19" parent="8" name="PRIMARY">
+    <column id="23" parent="8" name="speed">
+      <Position>4</Position>
+      <DataType>float(5,2)|0</DataType>
+      <DefaultExpression>&apos;0.00&apos;</DefaultExpression>
+    </column>
+    <key id="24" parent="8" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="20" parent="9" name="ID">
+    <column id="25" parent="9" name="ID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="21" parent="9" name="username">
+    <column id="26" parent="9" name="review">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="27" parent="9" name="iduser">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="28" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="29" parent="10" name="ID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="30" parent="10" name="username">
       <Position>2</Position>
       <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="22" parent="9" name="password">
+    <column id="31" parent="10" name="password">
       <Position>3</Position>
       <DataType>varchar(80)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="23" parent="9" name="email">
+    <column id="32" parent="10" name="email">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <index id="24" parent="9" name="users_username_uindex">
+    <index id="33" parent="10" name="users_username_uindex">
       <ColNames>username</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="25" parent="9" name="PRIMARY">
+    <key id="34" parent="10" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="26" parent="9" name="users_username_uindex">
+    <key id="35" parent="10" name="users_username_uindex">
       <ColNames>username</ColNames>
       <UnderlyingIndexName>users_username_uindex</UnderlyingIndexName>
     </key>

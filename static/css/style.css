@@ -1,14 +1,17 @@
+body {
+    font-family: sans-serif;
+}
+
 #title {
-    margin-left: 500px;
+    margin-left: 550px;
     margin-right: auto;
 }
 
 #textp {
     text-align: left;
-    margin-left: auto;
+    margin-left: 850px;
     margin-top: 145px;
     font-size: 30px;
-    margin-right: 100px;
 
 }
 
@@ -32,14 +35,24 @@
 
 }
 
+#distance {
+    text-align: center;
+    font-size: 60px;
+}
+
 #lastrun {
     text-align: center;
 
 }
 
-#today {
+#speed {
     text-align: center;
 
+}
+
+#speed2 {
+    text-align: center;
+    font-size: 60px;
 }
 
 #daybyday {
@@ -99,19 +112,6 @@ body {
     text-align: center;
     display: inline;
 
-}
-
-.flex-products {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 90%;
-    margin: 0 auto;
-}
-
-.flex-product {
-    margin: 10px;
-    width: 30%;
 }
 
 figure > image {
@@ -228,12 +228,13 @@ img {
 
 /* Full-width inputs */
 input[type=text], input[type=password] {
-    width: 100%;
+    width: 20%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
+
 }
 
 /* Set a style for all buttons */

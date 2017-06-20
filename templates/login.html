@@ -16,19 +16,21 @@ class="active"
 
         </div>
 
-
-        <label><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="username" required >
-        <label><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="password" required>
-
+        <div style="width: 100%">
+            <label style="display:block"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="username" required>
+        </div>
+        <div style="width: 100%">
+            <label style="display:block"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" required>
+        </div>
     </form>
 
-        <input type="submit" value="Log in" form="loginForm" login>
+    <input type="submit" value="Log in" form="loginForm" login>
 
-        <a href={{'createAccount'}}>
-            <button>Create Account</button>
-        </a>
+    <a href={{'createAccount'}}>
+        <button>Create Account</button>
+    </a>
 </div>
 
 

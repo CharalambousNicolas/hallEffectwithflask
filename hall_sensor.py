@@ -66,6 +66,7 @@ try:
         print('rpm:{0:.2f} speed:{1:.2f} distance:{2} elapse:{3:.4f} multiplier:{4:.4f}'.format(rpm, speed, distance,
                                                                                                 elapse, multiplier))
         time.sleep(0.1)
+        time.sleep(2)
 except KeyboardInterrupt:
     print('You have pressed Ctrl+C! How dare you stopped this beautiful thing?!')
     GPIO.cleanup()

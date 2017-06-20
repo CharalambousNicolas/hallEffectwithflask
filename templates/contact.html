@@ -28,10 +28,6 @@ class="active"
         resize: vertical;
     }
 
-
-
-
-
     .container5 {
         border-radius: 5px;
         background-color: white;
@@ -41,18 +37,20 @@ class="active"
 
 
 <div class="container5">
-    <form>
+    <form action="" method="POST">
 
 
-        <label for="problem">Problem</label>
-        <select id="problem" name="problem">
-            <option value="bugs">Bugs</option>
-            <option value="hardware">Hardware</option>
-            <option value="other">Other</option>
-        </select>
-
+        <!--<label for="subject">Subject</label>-->
+        <!--<select id="subject" name="subject">-->
+        <!--<option value="bugs">Bugs</option>-->
+        <!--<option value="hardware">Hardware</option>-->
+        <!--<option value="other">Other</option>-->
+        <!--</select>-->
         <label for="subject">Subject</label>
-        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+        <textarea id="subject" name="subject" placeholder="Subject.." style="height:50px"></textarea>
+
+        <label for="Message">Message</label>
+        <textarea id="message" name="message" placeholder="Write something.." style="height:200px"></textarea>
 
         <input type="submit" value="Submit">
     </form>

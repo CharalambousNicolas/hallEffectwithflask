@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 {% block title %}
-Today
+Speed
 {% endblock %}
-{% block today %}
+{% block speed %}
 class="active"
 {% endblock %}
 {% block body %}
 
 <body style="background-color:lightgrey;">
-<p id="today" style="font-size:100px">Today</p>
-
+<p id="speed" style="font-size:100px">Speed</p>
+<p id="speed2">{{speed}}</p>
 
 {% endblock %}
